@@ -2,12 +2,12 @@
 Spring Boot back-end app
 
 ## Run SpringBoot app
-`
+```
 mvn spring-boot:run
-`
+```
 
 ## MySql Database configuration
-`
+```
 create database if not exists mydb;
 
 drop table if exists mydb.players;
@@ -66,4 +66,4 @@ values
 ('Jerom Jimms', 71),
 ('Akela Croft', 84),
 ('Olivia Priez', 76);
-`
+```
