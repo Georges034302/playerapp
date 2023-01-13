@@ -67,3 +67,46 @@ values
 ('Akela Croft', 84),
 ('Olivia Priez', 76);
 ```
+
+## DB Password Encryption
+
+### 1- Add the following dependency to pom.xml
+```
+<dependency>
+	<groupId>com.github.ulisesbocchio</groupId>
+	<artifactId>jasypt-spring-boot-starter</artifactId>
+	<version>3.0.4</version>
+</dependency>
+```
+
+### 2- Add the following plugin to pom.xml
+```
+<plugin>
+	<groupId>com.github.ulisesbocchio</groupId>
+	<artifactId>jasypt-maven-plugin</artifactId>
+	<version>3.0.4</version>
+</plugin>
+```
+
+### 3- Label your password as DEC in the application.properties
+```
+spring.datasource.password=DEC("<your password>")
+```
+
+### 4 - Add the Jasypt properties in the application.properties
+```
+jasypt.encryptor.algorithm=PBEWithMD5AndDES
+jasypt.encryptor.password=techjava
+jasypt.encryptor.keyObtentionIterations=1000
+jasypt.encryptor.poolSize=1
+jasypt.encryptor.providerName=SunJCE
+jasypt.encryptor.saltGeneratorClassname=org.jasypt.salt.RandomSaltGenerator
+jasypt.encryptor.stringOutputType=base64
+```
+
+### 5- Execute the Jasypt encryption command in Maven CLI
+
+```
+mvn jasypt:encrypt -Djasypt.encryptor.password=techjava
+```
+
