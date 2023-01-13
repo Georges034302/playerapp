@@ -65,5 +65,10 @@ public class Player {
         this.rating = rating;
     }
 
+    @Override
+    public String toString() {
+        return "Player [ID=" + ID + ", name=" + name + ", score=" + score + ", rating=" + rating + "]";
+    }
+
     
 }
