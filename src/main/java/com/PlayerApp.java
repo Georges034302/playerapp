@@ -7,10 +7,10 @@ import java.util.List;
 import com.service.*;
 import com.model.*;
 
-@SpringBootApplication
+//@SpringBootApplication
 public class PlayerApp {
 
-    @Bean
+    //@Bean
     public CommandLineRunner runner(PlayerService service) {
         return (args) ->{
             //service.addPlayer(new Player("Alen Talis", 88));
